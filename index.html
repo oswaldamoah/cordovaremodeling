@@ -1,0 +1,742 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Cordova Remodeling</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Cordova Remodeling: Houston framing, foundation repair, building repair, trim carpentry and wood flooring installation, refinishing and repair.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: photography carries the page. Cream parchment base, sepia band for flooring,
+   maroon for contact. Brand guide colors only; single brand look by choice. */
+:root{
+  color-scheme: light;
+  --maroon:#660000;
+  --maroon-2:#7a0a0a;
+  --gold:#D4AF37;
+  --gold-ink:#8a6c10;
+  --sepia:#332211;
+  --sepia-2:#3f2b17;
+  --cream:#F5EBC9;
+  --cream-hi:#FBF6E6;
+  --ink:#332211;
+  --ink-2:#5c4833;
+  --line:rgba(51,34,17,.15);
+  --line-d:rgba(245,235,201,.16);
+  --f-head:"Avenir LT Pro","Avenir Next","Montserrat",Helvetica,Arial,sans-serif;
+  --f-body:"Caslon Pro","Adobe Caslon Pro","Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --gl:max(20px, env(safe-area-inset-left, 0px));
+  --gr:max(20px, env(safe-area-inset-right, 0px));
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--cream)}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-head);margin:0;line-height:1.12;text-wrap:balance}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1260px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+.label{font-family:var(--f-head);font-weight:700;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
+.h2{font-size:clamp(30px,4vw,48px);font-weight:800;color:var(--maroon);letter-spacing:-.01em;text-transform:uppercase}
+.lead{font-size:clamp(17px,1.5vw,19px);color:var(--ink-2);max-width:62ch}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-head);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:16px 26px;border-radius:3px;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:var(--sepia)}
+.btn-gold:hover{background:#e0bf4f;transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(245,235,201,.7);color:var(--cream)}
+.btn-ghost:hover{background:var(--cream);color:var(--maroon);border-color:var(--cream)}
+.btn-line{border-color:var(--maroon);color:var(--maroon)}
+.btn-line:hover{background:var(--maroon);color:var(--cream)}
+.btn svg{width:17px;height:17px;flex-shrink:0}
+
+/* utility bar + header */
+.util{background:var(--sepia);color:rgba(245,235,201,.85);font-family:var(--f-head);font-size:13px;font-weight:600}
+.util .wrap{display:flex;justify-content:space-between;gap:16px;padding-block:8px;flex-wrap:wrap}
+.util a{text-decoration:none}
+.util a:hover{color:var(--gold)}
+.util .r{display:flex;gap:22px}
+@media (max-width:640px){.util .l{display:none}.util .wrap{justify-content:center}}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:22px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand img{width:64px;height:auto}
+.wordmark{font-family:"Montserrat",var(--f-head);font-weight:800;color:var(--maroon);line-height:.95;font-size:19px;letter-spacing:.01em}
+.wordmark small{display:block;font-size:12.6px;letter-spacing:.2em;font-weight:800;margin-top:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{font-family:var(--f-head);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:10px 13px;color:var(--ink);border-radius:3px}
+.nav a:hover{color:var(--maroon);background:rgba(102,0,0,.06)}
+.top .btn{padding:12px 18px;font-size:12.5px}
+.menu{display:none;margin-left:auto;width:46px;height:46px;border:1px solid var(--line);background:none;border-radius:3px;cursor:pointer;align-items:center;justify-content:center}
+.menu svg{width:22px;height:22px}
+@media (max-width:1060px){
+  .nav{display:none}.menu{display:inline-flex}
+  .nav.open{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--cream-hi);border-bottom:1px solid var(--line);padding:8px var(--gr) 16px var(--gl)}
+  .nav.open a{padding:15px 10px;font-size:15px}
+}
+@media (max-width:540px){.top .btn{display:none}.brand img{width:52px}.wordmark{font-size:16px}.wordmark small{font-size:10.6px}}
+
+/* hero */
+.hero{position:relative;min-height:clamp(560px,80vh,820px);display:flex;align-items:flex-end;color:var(--cream);background:var(--sepia);overflow:hidden}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,16,6,.86) 0%,rgba(28,16,6,.6) 42%,rgba(28,16,6,.08) 75%),linear-gradient(0deg,rgba(28,16,6,.7) 0%,rgba(28,16,6,0) 40%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:80px 44px}
+.hero-label{font-family:var(--f-head);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.hero h1{margin-top:18px;font-family:"Montserrat",var(--f-head);font-weight:900;font-size:clamp(44px,7vw,92px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;max-width:11ch}
+.hero h1 span{display:block;font-family:var(--f-body);font-style:italic;font-weight:400;text-transform:none;color:var(--gold);letter-spacing:-.01em;line-height:1.08;margin-top:.06em}
+.hero p{margin-top:22px;max-width:52ch;font-size:clamp(17px,1.6vw,20px);color:rgba(245,235,201,.9)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-svc{display:flex;flex-wrap:wrap;gap:0;margin-top:56px;border-top:1px solid rgba(245,235,201,.25)}
+.hero-svc a{flex:1 1 150px;padding:18px 18px 4px 0;font-family:var(--f-head);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:rgba(245,235,201,.88);display:flex;align-items:center;gap:10px}
+.hero-svc a::before{content:"";width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.hero-svc a:hover{color:var(--gold)}
+.vid-toggle{position:absolute;z-index:3;right:calc(var(--gr) + 0px);bottom:calc(20px + env(safe-area-inset-bottom,0px));width:42px;height:42px;border-radius:50%;border:1px solid rgba(245,235,201,.5);background:rgba(28,16,6,.4);color:var(--cream);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vid-toggle svg{width:16px;height:16px}
+@media (max-width:700px){.hero-svc{display:none}.hero::after{background:linear-gradient(0deg,rgba(28,16,6,.92) 0%,rgba(28,16,6,.55) 60%,rgba(28,16,6,.25) 100%)}}
+
+/* intro */
+.intro{padding-block:clamp(70px,9vw,120px)}
+.intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,88px);align-items:center}
+.intro .wrap > *{min-width:0}
+.collage{position:relative;padding:0 18% 14% 0}
+.collage img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.collage img + img{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:4/5;border:8px solid var(--cream);box-shadow:0 24px 50px -24px rgba(51,34,17,.5)}
+.intro h2{margin-top:14px}
+.intro .lead{margin-top:20px}
+.checks{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;font-family:var(--f-head);font-weight:600;font-size:15px}
+.checks li{display:flex;gap:10px;align-items:flex-start}
+.checks svg{width:20px;height:20px;color:var(--maroon);flex-shrink:0;margin-top:1px}
+.intro .btn{margin-top:34px}
+@media (max-width:880px){.intro .wrap{grid-template-columns:1fr}}
+@media (max-width:460px){.checks{grid-template-columns:1fr}}
+
+/* services */
+.services{padding-block:0 clamp(70px,9vw,120px)}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap;margin-bottom:40px}
+.svc-head > *{min-width:0}
+.svc-head .lead{max-width:48ch}
+.group{margin-top:34px}
+.group-t{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.group-t h3{font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.group-t::after{content:"";flex:1;height:1px;background:var(--line)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--cream-hi);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.card figure{margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--sepia)}
+.card figure img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.card:hover figure img{transform:scale(1.04)}
+.card .body{padding:24px 24px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card h4{font-size:20px;font-weight:800;color:var(--maroon);text-transform:uppercase;letter-spacing:.01em}
+.card p{font-size:16px;color:var(--ink-2)}
+.card ul{list-style:none;padding:0;margin:auto 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-head);font-size:13px;font-weight:600;color:var(--ink);padding-top:6px}
+.card li::before{content:"·";color:var(--gold-ink);font-weight:900;margin-right:6px}
+@media (max-width:960px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+
+/* flooring */
+.floor{background:var(--sepia);color:var(--cream);padding-block:clamp(70px,9vw,120px)}
+.floor .label{color:var(--gold)}
+.floor .h2{color:var(--cream)}
+.floor .lead{color:rgba(245,235,201,.78)}
+.types{display:grid;grid-template-columns:1.15fr .85fr;margin-top:44px;border:1px solid var(--line-d)}
+.types > *{min-width:0}
+.t-photo{position:relative;min-height:440px;background:#21160b}
+.t-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.t-side{display:flex;flex-direction:column;background:var(--sepia-2)}
+.t-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line-d)}
+.t-tab{all:unset;cursor:pointer;text-align:center;padding:16px 8px;font-family:var(--f-head);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,235,201,.7);border-right:1px solid var(--line-d)}
+.t-tab:last-child{border-right:0}
+.t-tab:hover{color:var(--cream)}
+.t-tab[aria-selected="true"]{background:var(--maroon);color:var(--cream);box-shadow:inset 0 -3px 0 var(--gold)}
+.t-tab:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+.t-body{padding:30px 32px 32px;display:flex;flex-direction:column;gap:16px}
+.t-body h3{font-size:26px;font-weight:800;text-transform:uppercase}
+.t-body > p{color:rgba(245,235,201,.82);font-size:16.5px}
+.specs{margin:4px 0 0;display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line-d)}
+.specs dt,.specs dd{margin:0;padding:11px 0;border-bottom:1px solid var(--line-d);font-size:15.5px}
+.specs dt{font-family:var(--f-head);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-right:20px;padding-top:14px}
+@media (max-width:960px){.types{grid-template-columns:1fr}.t-photo{min-height:0;aspect-ratio:16/10}}
+@media (max-width:480px){.t-tab{font-size:11px;padding:14px 4px;letter-spacing:.04em}.t-body{padding:24px 20px}}
+
+.refin{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,56px);margin-top:clamp(56px,7vw,90px);align-items:center}
+.refin > *{min-width:0}
+.ba{position:relative;aspect-ratio:4/3;max-width:100%;overflow:hidden;user-select:none;touch-action:pan-y;background:#21160b}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:var(--gold);pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--pos,50%);width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:var(--gold);color:var(--sepia);display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.ba .knob svg{width:22px;height:22px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+.ba .tag{position:absolute;top:14px;font-family:var(--f-head);font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;padding:7px 11px;background:rgba(28,16,6,.82);pointer-events:none}
+.ba .tag.b{left:14px}.ba .tag.a{right:14px;background:var(--maroon)}
+.ba:focus-within .knob{outline:3px solid var(--cream);outline-offset:3px}
+.refin h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;text-transform:uppercase;margin-top:12px}
+.refin > div > p{margin-top:14px;color:rgba(245,235,201,.82)}
+.grit{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--line-d)}
+.grit li{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-d)}
+.grit b{font-family:"Montserrat",var(--f-head);font-weight:900;font-size:24px;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+.grit b small{display:block;font-size:10px;letter-spacing:.16em;font-weight:700;color:rgba(245,235,201,.55);margin-top:5px}
+.grit strong{display:block;font-family:var(--f-head);font-size:15px;letter-spacing:.02em}
+.grit span{font-size:15.5px;color:rgba(245,235,201,.82)}
+@media (max-width:900px){.refin{grid-template-columns:1fr}}
+
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin-top:clamp(56px,7vw,90px)}
+.duo article{display:grid;grid-template-columns:.9fr 1.1fr;background:var(--sepia-2);border:1px solid var(--line-d);min-width:0}
+.duo figure{margin:0;min-height:280px;position:relative;background:#21160b}
+.duo figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.duo .body{padding:28px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.duo h3{font-size:21px;font-weight:800;text-transform:uppercase}
+.duo p{font-size:16px;color:rgba(245,235,201,.82)}
+.duo ul{list-style:none;padding:0;margin:4px 0 0;display:grid;gap:7px;font-family:var(--f-head);font-size:14px;font-weight:600}
+.duo li{display:flex;gap:10px;align-items:baseline}
+.duo li::before{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;position:relative;top:-1px}
+@media (max-width:1060px){.duo{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.duo article{grid-template-columns:minmax(0,1fr)}.duo figure{aspect-ratio:4/3;min-height:0;width:100%}}
+
+/* work */
+.work{padding-block:clamp(70px,9vw,120px)}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px 48px}
+.work-head > *{min-width:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 26px}
+.filter{all:unset;cursor:pointer;font-family:var(--f-head);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;padding:10px 16px;border:1px solid rgba(51,34,17,.28);border-radius:2px}
+.filter:hover{border-color:var(--maroon);color:var(--maroon)}
+.filter[aria-pressed="true"]{background:var(--maroon);border-color:var(--maroon);color:var(--cream)}
+.filter:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.masonry{columns:3 300px;column-gap:16px}
+.shot{all:unset;display:inline-block;vertical-align:top;break-inside:avoid;margin:0 0 16px;position:relative;cursor:zoom-in;width:100%;overflow:hidden;background:var(--sepia)}
+.shot img{width:100%;height:auto;transition:transform .6s ease}
+.shot:hover img{transform:scale(1.03)}
+.shot .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(0deg,rgba(28,16,6,.88),rgba(28,16,6,0));color:var(--cream);font-family:var(--f-head);font-weight:700;font-size:14.5px;line-height:1.3}
+.shot .cap small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.shot:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* houston band */
+.htx{position:relative;color:var(--cream);background:var(--sepia);overflow:hidden}
+.htx > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.htx::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(51,34,17,.94) 0%,rgba(51,34,17,.82) 50%,rgba(51,34,17,.45) 100%)}
+.htx .wrap{position:relative;z-index:2;padding-block:clamp(70px,9vw,120px);display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+.htx .wrap > *{min-width:0}
+.htx .label{color:var(--gold)}
+.htx .h2{color:var(--cream);margin-top:12px}
+.htx .lead{color:rgba(245,235,201,.86);margin-top:18px}
+.facts{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line-d)}
+.facts div{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--line-d)}
+.facts b{font-family:var(--f-head);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);padding-top:3px}
+.facts span{font-size:16px;color:rgba(245,235,201,.88)}
+.areas{align-self:end;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-end}
+.areas span{font-family:var(--f-head);font-weight:600;font-size:14px;padding:8px 14px;border:1px solid rgba(245,235,201,.35);background:rgba(28,16,6,.35)}
+@media (max-width:860px){.htx .wrap{grid-template-columns:1fr}}
+@media (max-width:480px){.facts div{grid-template-columns:1fr;gap:4px}}
+
+/* process */
+.process{padding-block:clamp(70px,9vw,120px);background:var(--cream-hi);border-bottom:1px solid var(--line)}
+.steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+.steps li{border-top:3px solid var(--maroon);padding-top:18px;min-width:0}
+.steps li b{font-family:"Montserrat",var(--f-head);font-weight:900;font-size:34px;color:var(--gold);line-height:1}
+.steps h3{font-size:16.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;margin:12px 0 8px}
+.steps p{font-size:15.5px;color:var(--ink-2)}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--maroon);color:var(--cream);padding-block:clamp(70px,9vw,120px);position:relative;overflow:hidden}
+.contact .mark{position:absolute;right:-70px;top:-40px;width:440px;opacity:.07;pointer-events:none}
+.contact .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,72px)}
+.contact .wrap > *{min-width:0}
+.contact .label{color:var(--gold)}
+.contact .h2{color:var(--cream);margin-top:12px}
+.contact .lead{color:rgba(245,235,201,.85);margin-top:16px}
+.lines{margin:32px 0 0;border-top:1px solid rgba(245,235,201,.22)}
+.line{display:grid;grid-template-columns:96px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(245,235,201,.22)}
+.line dt{font-family:var(--f-head);font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.line dd{margin:0;font-family:var(--f-head);font-weight:700;font-size:18px;overflow-wrap:anywhere}
+.line dd a{text-decoration:none}
+.line dd small{display:block;font-weight:500;font-size:14px;color:rgba(245,235,201,.72)}
+.copy{all:unset;cursor:pointer;font-family:var(--f-head);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(245,235,201,.4);padding:7px 11px;border-radius:2px}
+.copy:hover{border-color:var(--gold);color:var(--gold)}
+.copy:focus-visible{outline:2px solid var(--gold)}
+.form{background:var(--cream);color:var(--ink);padding:clamp(24px,3.4vw,40px);border-top:6px solid var(--gold);box-shadow:0 40px 70px -40px rgba(0,0,0,.6)}
+.form h3{font-size:24px;font-weight:800;color:var(--maroon);text-transform:uppercase}
+.form > p{color:var(--ink-2);font-size:15.5px;margin-top:6px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.fg .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-family:var(--f-head);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.field input,.field select,.field textarea{width:100%;background:var(--cream-hi);border:1px solid rgba(51,34,17,.28);border-radius:2px;padding:13px 14px;font-family:var(--f-head);font-size:16px;font-weight:500;color:var(--ink)}
+.field textarea{min-height:120px;resize:vertical;line-height:1.5}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--gold);outline-offset:0;border-color:var(--gold-ink)}
+.ff{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:20px}
+.ff small{font-size:14px;color:var(--ink-2);font-style:italic}
+.err{margin-top:12px;color:var(--maroon);font-family:var(--f-head);font-weight:700;font-size:14px}
+.done{margin-top:18px;padding:18px;border:1px solid var(--gold-ink);background:var(--cream-hi);font-family:var(--f-head);font-size:15px;display:grid;gap:12px}
+.done pre{margin:0;white-space:pre-wrap;font-family:var(--f-head);font-size:13.5px;background:var(--cream);padding:12px;border:1px solid var(--line);max-height:180px;overflow:auto}
+.done .row{display:flex;flex-wrap:wrap;gap:10px}
+.done .btn{padding:11px 16px;font-size:12px}
+@media (max-width:900px){.contact .wrap{grid-template-columns:1fr}}
+@media (max-width:520px){.fg{grid-template-columns:1fr}.line{grid-template-columns:1fr auto}.line dt{grid-column:1/-1}}
+
+footer{background:var(--sepia);color:rgba(245,235,201,.78);padding-block:52px 34px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+.foot > *{min-width:0}
+.foot .wordmark{color:var(--cream)}
+.foot h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:800}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-family:var(--f-head);font-size:14.5px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--gold)}
+.foot .tag{font-style:italic;margin-top:14px}
+.foot-base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line-d);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;font-family:var(--f-head);font-size:13px}
+@media (max-width:860px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.foot{grid-template-columns:1fr}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(20,12,4,.95);display:flex;align-items:center;justify-content:center;padding:calc(60px + env(safe-area-inset-top,0px)) var(--gr) calc(30px + env(safe-area-inset-bottom,0px)) var(--gl)}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:100%}
+.lb img{max-height:78vh;width:auto;max-width:100%}
+.lb figcaption{color:var(--cream);font-family:var(--f-head);font-weight:600;text-align:center}
+.lb-btn{all:unset;cursor:pointer;position:absolute;color:var(--cream);font-family:var(--f-head);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(245,235,201,.4);padding:11px 15px;background:rgba(20,12,4,.6)}
+.lb-btn:hover{border-color:var(--gold);color:var(--gold)}
+.lb-btn:focus-visible{outline:2px solid var(--gold)}
+.lb-x{top:calc(14px + env(safe-area-inset-top,0px));right:var(--gr)}
+.lb-p{left:var(--gl);top:50%;transform:translateY(-50%)}
+.lb-n{right:var(--gr);top:50%;transform:translateY(-50%)}
+@media (max-width:640px){.lb-p,.lb-n{top:auto;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:none}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+
+<div class="util">
+  <div class="wrap">
+    <span class="l">Houston, Texas · Free in-home estimates</span>
+    <span class="r"><a href="tel:+17135550142">(713) 555-0142</a><a href="mailto:info@cordovaremodeling.com">info@cordovaremodeling.com</a></span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cordova Remodeling home">
+      <img src="images/logo-mark.png" alt="" width="64" height="48">
+      <span class="wordmark">CORDOVA<small>REMODELING</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#flooring">Wood Flooring</a>
+      <a href="#work">Our Work</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold" href="#contact">Free Estimate</a>
+    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Cordova Remodeling">
+    <img class="poster" src="images/hero-poster.jpg" alt="">
+    <video id="heroVid" src="images/hero.mp4" poster="images/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="wrap">
+      <div class="hero-label">Houston Remodeling &amp; Wood Flooring</div>
+      <h1>Modern Spaces. <span>Classic craft.</span></h1>
+      <p>Framing, foundation and building repair, trim carpentry and wood floors, done by one crew that stays on your project from the first wall to the last coat of finish.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#contact">Get a free estimate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#work">See our work</a>
+      </div>
+      <nav class="hero-svc" aria-label="Services">
+        <a href="#services">Framing</a><a href="#services">Foundation</a><a href="#services">Building Repair</a><a href="#services">Trim Work</a><a href="#flooring">Wood Flooring</a>
+      </nav>
+    </div>
+    <button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video">
+      <svg id="vidIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>
+    </button>
+  </section>
+
+  <section class="intro">
+    <div class="wrap">
+      <div class="collage">
+        <img src="images/stone-wall-living.jpg" alt="Open living room with oak-look plank flooring and a stacked stone wall" loading="lazy">
+        <img src="images/stairs-oak.jpg" alt="Oak stair treads with iron balusters" loading="lazy">
+      </div>
+      <div>
+        <div class="label">All-around remodeling</div>
+        <h2 class="h2">From the foundation to the finish trim.</h2>
+        <p class="lead">Most remodels slow down between trades. We do the structural work and the finish work ourselves, so the crew that frames your opening is the same crew that sets the floor and runs the trim around it.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Free in-home walkthrough</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Itemized written proposal</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Residential &amp; commercial</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Daily cleanup on site</li>
+        </ul>
+        <a class="btn btn-line" href="#services">Our services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="svc-head">
+        <div><div class="label">Services</div><h2 class="h2" style="margin-top:12px">What we build</h2></div>
+        <p class="lead">Structure first, finishes last. Every job starts with what's behind the walls and under the floor.</p>
+      </div>
+
+      <div class="group">
+        <div class="group-t"><h3>Structure &amp; repair</h3></div>
+        <div class="cards">
+          <article class="card">
+            <figure><img src="images/structure-lift.jpg" alt="Crew re-framing the lower level of a raised house" loading="lazy"></figure>
+            <div class="body">
+              <h4>Framing &amp; Structural</h4>
+              <p>Room additions, new walls and open floor plans. We remove load-bearing walls with properly sized beams and frame new door and window openings.</p>
+              <ul><li>Additions</li><li>Wall removal &amp; beams</li><li>Openings</li><li>Garage conversions</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <figure><img src="images/foundation-dig.jpg" alt="Excavation along a slab foundation for repair" loading="lazy"></figure>
+            <div class="body">
+              <h4>Foundation Repair</h4>
+              <p>Slab and pier-and-beam leveling, new supports and drainage fixes. Houston clay swells when wet and shrinks when dry, and sticking doors or cracked brick are usually the first sign.</p>
+              <ul><li>Slab leveling</li><li>Pier &amp; beam</li><li>Drainage</li><li>Crack repair</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <figure><img src="images/framing-repair.jpg" alt="Wall opened to the studs for repair" loading="lazy"></figure>
+            <div class="body">
+              <h4>Building Repair</h4>
+              <p>Water and rot damage, storm repairs, siding, drywall and subfloor. We open it up, find the source and fix it before anything gets closed back in.</p>
+              <ul><li>Water &amp; rot</li><li>Storm damage</li><li>Siding</li><li>Drywall</li><li>Subfloor</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-t"><h3>Finish &amp; interiors</h3></div>
+        <div class="cards">
+          <article class="card">
+            <figure><img src="images/accent-wall.jpg" alt="Geometric trim accent wall painted charcoal" loading="lazy"></figure>
+            <div class="body">
+              <h4>Trim &amp; Finish Carpentry</h4>
+              <p>Accent walls, crown molding, baseboards, door and window casing, wainscoting, built-ins and stair parts. The details that make a room look finished.</p>
+              <ul><li>Accent walls</li><li>Crown &amp; base</li><li>Wainscoting</li><li>Built-ins</li><li>Stairs</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <figure><img src="images/kitchen-install.jpg" alt="Kitchen remodel with new island and flooring being installed" loading="lazy"></figure>
+            <div class="body">
+              <h4>Kitchens &amp; Whole-Home</h4>
+              <p>Kitchen and bath remodels, layout changes and full interior renovations, run on one schedule from demo through the final punch list.</p>
+              <ul><li>Kitchens</li><li>Baths</li><li>Layout changes</li><li>Full interiors</li></ul>
+            </div>
+          </article>
+          <article class="card">
+            <figure><img src="images/commercial.jpg" alt="Commercial corridor build-out with wood slat walls and tile" loading="lazy"></figure>
+            <div class="body">
+              <h4>Commercial Build-Outs</h4>
+              <p>Offices, clinics and retail interiors. Framing, finishes, flooring and millwork, scheduled around your business hours.</p>
+              <ul><li>Tenant finish-outs</li><li>Offices</li><li>Retail</li><li>Flooring</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="floor" id="flooring">
+    <div class="wrap">
+      <div class="svc-head" style="margin-bottom:0">
+        <div><div class="label">Wood Flooring</div><h2 class="h2" style="margin-top:12px">Installed, refinished &amp; repaired</h2></div>
+        <p class="lead">Most Houston homes sit on a concrete slab, and the humidity never really lets up. That decides which floor will hold up in your house. Pick a type to compare.</p>
+      </div>
+
+      <div class="types">
+        <div class="t-photo"><img id="tImg" src="images/red-oak-gloss.jpg" alt=""></div>
+        <div class="t-side">
+          <div class="t-tabs" role="tablist" aria-label="Flooring types">
+            <button class="t-tab" role="tab" id="t-solid" data-k="solid" aria-selected="true" aria-controls="tPanel">Solid</button>
+            <button class="t-tab" role="tab" id="t-eng" data-k="eng" aria-selected="false" aria-controls="tPanel" tabindex="-1">Engineered</button>
+            <button class="t-tab" role="tab" id="t-lvp" data-k="lvp" aria-selected="false" aria-controls="tPanel" tabindex="-1">LVP / LVT</button>
+            <button class="t-tab" role="tab" id="t-lam" data-k="lam" aria-selected="false" aria-controls="tPanel" tabindex="-1">Laminate</button>
+          </div>
+          <div class="t-body" id="tPanel" role="tabpanel" aria-labelledby="t-solid">
+            <h3 id="tTitle"></h3>
+            <p id="tDesc"></p>
+            <dl class="specs" id="tSpecs"></dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="refin">
+        <div class="ba" id="ba" style="--pos:50%">
+          <img src="images/refinish-after.jpg" alt="Room after the floor was refinished">
+          <img class="before" src="images/refinish-before.jpg" alt="Same room during sanding, before refinishing">
+          <span class="bar"></span>
+          <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          <span class="tag b">Before</span><span class="tag a">After</span>
+          <label class="sr" for="baRange">Drag to compare before and after</label>
+          <input type="range" id="baRange" min="0" max="100" value="50">
+        </div>
+        <div>
+          <div class="label">Refinishing &amp; Sanding</div>
+          <h3>Bring your original floor back</h3>
+          <p>Drag the slider to see a room before and after refinishing. Solid hardwood can be sanded back to fresh wood several times over its life. We sand in passes with finer grit each time so it comes out flat with no swirl marks.</p>
+          <ol class="grit">
+            <li><b>36<small>GRIT</small></b><span><strong>Strip</strong>Takes off the old finish, stain and cupping.</span></li>
+            <li><b>60<small>GRIT</small></b><span><strong>Flatten</strong>Removes the scratches from the first pass.</span></li>
+            <li><b>100<small>GRIT</small></b><span><strong>Finish sand</strong>Ready for stain, with edges and corners done by hand.</span></li>
+            <li><b>3×<small>COATS</small></b><span><strong>Stain &amp; seal</strong>Your color, then three coats of oil- or water-based polyurethane.</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="duo">
+        <article>
+          <figure><img src="images/closet-install.jpg" alt="Installer laying hardwood into a walk-in closet"></figure>
+          <div class="body">
+            <div class="label">Installation</div>
+            <h3>Hardwood installation</h3>
+            <p>Solid, engineered, LVP/LVT and laminate. We check the slab or subfloor for level and moisture first, and acclimate wood in your home before it goes down.</p>
+            <ul><li>Solid &amp; engineered hardwood</li><li>LVP / LVT and laminate</li><li>Stair treads &amp; nosings</li><li>Subfloor leveling</li></ul>
+          </div>
+        </article>
+        <article>
+          <figure><img src="images/refinish-brush.jpg" alt="Freshly finished hardwood with brush in the foreground"></figure>
+          <div class="body">
+            <div class="label">Repairs &amp; Stain Matching</div>
+            <h3>Repairs that disappear</h3>
+            <p>We weave new boards into the existing floor and mix stain on site against your boards, so a repair or patch blends in with the rest of the room.</p>
+            <ul><li>Water-damaged &amp; pet-stained boards</li><li>Squeaks, gaps &amp; cupping</li><li>Patching after wall removal</li><li>Thresholds &amp; transitions</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="work-head">
+        <div><div class="label">Our Work</div><h2 class="h2" style="margin-top:12px">Recent projects</h2></div>
+        <p class="lead" style="max-width:48ch">Real jobs around Houston, finished and in progress. Tap any photo to see it full size.</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      <div class="masonry" id="gallery"></div>
+    </div>
+  </section>
+
+  <section class="htx" aria-labelledby="htxT">
+    <img src="images/houston.jpg" alt="">
+    <div class="wrap">
+      <div>
+        <div class="label">Built for Houston</div>
+        <h2 class="h2" id="htxT">We know what Houston does to a house.</h2>
+        <p class="lead">Clay soil, slab foundations, summer humidity and storm season all shape how a remodel should be built here.</p>
+        <div class="facts">
+          <div><b>Clay soil</b><span>Foundations move with wet and dry seasons. We check level before we build on it.</span></div>
+          <div><b>Slab homes</b><span>We match the flooring to the slab: engineered, LVP or laminate glued or floated, or solid wood over a plywood subfloor.</span></div>
+          <div><b>Humidity</b><span>Wood is acclimated on site and expansion gaps are left at every wall.</span></div>
+        </div>
+      </div>
+      <div class="areas" aria-label="Service area">
+        <span>Houston</span><span>The Heights</span><span>Bellaire</span><span>Katy</span><span>Sugar Land</span><span>Cypress</span><span>Spring</span><span>The Woodlands</span><span>Pearland</span><span>Missouri City</span><span>Pasadena</span><span>Humble</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="label">How it works</div>
+      <h2 class="h2" style="margin-top:12px">Five steps, no surprises</h2>
+      <ol class="steps">
+        <li><b>01</b><h3>Walkthrough</h3><p>We visit, measure and check the structure, subfloor and moisture.</p></li>
+        <li><b>02</b><h3>Written proposal</h3><p>An itemized scope with materials, timeline and price.</p></li>
+        <li><b>03</b><h3>Schedule</h3><p>Materials are ordered, and wood flooring acclimates on site for 3 to 5 days.</p></li>
+        <li><b>04</b><h3>Build</h3><p>One crew, daily cleanup and regular updates. Structure, then floors, then trim.</p></li>
+        <li><b>05</b><h3>Final walkthrough</h3><p>We go room by room with you and close out every punch-list item.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <img class="mark" src="images/logo-mark-light.png" alt="">
+    <div class="wrap">
+      <div>
+        <div class="label">Contact</div>
+        <h2 class="h2">Let's walk your space</h2>
+        <p class="lead">Tell us about the project. We'll set up a free walkthrough and send you a written proposal.</p>
+        <dl class="lines">
+          <div class="line"><dt>Phone</dt><dd><a href="tel:+17135550142">(713) 555-0142</a></dd><button class="copy" type="button" data-copy="(713) 555-0142">Copy</button></div>
+          <div class="line"><dt>Email</dt><dd><a href="mailto:info@cordovaremodeling.com">info@cordovaremodeling.com</a></dd><button class="copy" type="button" data-copy="info@cordovaremodeling.com">Copy</button></div>
+          <!-- ADDRESS: replace "Houston, Texas" with your street address -->
+          <div class="line"><dt>Office</dt><dd>Houston, Texas<small>Serving Greater Houston</small></dd><span></span></div>
+          <div class="line"><dt>Hours</dt><dd>Mon–Fri, 7 am – 6 pm<small>Saturday by appointment</small></dd><span></span></div>
+        </dl>
+      </div>
+      <div class="form">
+        <h3>Request a free estimate</h3>
+        <p>We usually reply within one business day.</p>
+        <form id="form" novalidate>
+          <div class="fg">
+            <div class="field"><label for="fName">Name</label><input id="fName" name="name" autocomplete="name"></div>
+            <div class="field"><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email"></div>
+            <div class="field"><label for="fZip">ZIP code</label><input id="fZip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="10"></div>
+            <div class="field full"><label for="fService">Project type</label>
+              <select id="fService" name="service">
+                <option>Wood flooring installation</option>
+                <option>Floor refinishing &amp; sanding</option>
+                <option>Floor repair &amp; stain matching</option>
+                <option>Framing &amp; structural</option>
+                <option>Foundation repair</option>
+                <option>Building repair</option>
+                <option>Trim &amp; finish carpentry</option>
+                <option>Kitchen, bath or whole-home remodel</option>
+                <option>Commercial build-out</option>
+                <option>Something else</option>
+              </select></div>
+            <div class="field full"><label for="fMsg">About the project</label><textarea id="fMsg" name="message" placeholder="Rooms, rough size, timing, anything you've noticed (cracks, soft spots, water damage)"></textarea></div>
+          </div>
+          <div class="ff"><small>No obligation. We never share your information.</small><button class="btn btn-gold" type="submit">Send request</button></div>
+          <p class="err" id="fErr" hidden></p>
+        </form>
+        <div class="done" id="fDone" hidden></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><img src="images/logo-mark-light.png" alt="" width="64" height="48"><span class="wordmark">CORDOVA<small>REMODELING</small></span></a>
+        <p class="tag">Modern Spaces. Classic Craft.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">Framing &amp; structural</a></li><li><a href="#services">Foundation repair</a></li><li><a href="#services">Building repair</a></li><li><a href="#services">Trim &amp; carpentry</a></li><li><a href="#services">Commercial</a></li></ul></div>
+      <div><h4>Wood Flooring</h4><ul><li><a href="#flooring">Hardwood installation</a></li><li><a href="#flooring">Solid &amp; engineered</a></li><li><a href="#flooring">LVP / LVT &amp; laminate</a></li><li><a href="#flooring">Refinishing &amp; sanding</a></li><li><a href="#flooring">Repairs &amp; stain matching</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+17135550142">(713) 555-0142</a></li><li><a href="mailto:info@cordovaremodeling.com">info@cordovaremodeling.com</a></li><li>Houston, Texas</li></ul></div>
+    </div>
+    <div class="foot-base"><span>© <span id="yr">2026</span> Cordova Remodeling. Formerly Cordova Construction.</span><span>Residential &amp; commercial remodeling · Houston, TX</span></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Project photo">
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lb-btn lb-x" id="lbX">Close</button>
+  <button type="button" class="lb-btn lb-p" id="lbP">‹ Prev</button>
+  <button type="button" class="lb-btn lb-n" id="lbN">Next ›</button>
+</div>
+
+<script>
+const CONTACT_EMAIL="info@cordovaremodeling.com";
+const FORM_ENDPOINT=""; // optional: paste a form service URL (e.g. Formspree) to get requests by email
+
+/* ----- Our Work gallery: images/ folder ----- */
+const WORK=[
+  {src:"stairs-oak.jpg",cat:"trim",t:"Oak stair treads & iron balusters"},
+  {src:"refinish-brush.jpg",cat:"refin",t:"Hardwood refinish, high-gloss finish"},
+  {src:"accent-wall.jpg",cat:"trim",t:"Geometric trim accent wall"},
+  {src:"living-lvp.jpg",cat:"floor",t:"Light oak plank & wainscoting"},
+  {src:"red-oak-gloss.jpg",cat:"refin",t:"Red oak, sanded & refinished"},
+  {src:"hallway-wainscot.jpg",cat:"trim",t:"Hallway wainscoting & plank floor"},
+  {src:"stone-wall-living.jpg",cat:"floor",t:"Oak-look plank, open living room"},
+  {src:"rustic-bedroom.jpg",cat:"floor",t:"Rustic multi-tone plank"},
+  {src:"grey-lvp-stairs.jpg",cat:"floor",t:"Grey plank with painted stair risers"},
+  {src:"pool-room-install.jpg",cat:"progress",t:"Wide-plank install, finishing the step-up"},
+  {src:"commercial-hall.jpg",cat:"commercial",t:"Commercial corridor build-out"},
+  {src:"hallway-sanding.jpg",cat:"refin",t:"Hallway sanded to bare wood"},
+  {src:"kitchen-install.jpg",cat:"progress",t:"Kitchen remodel, flooring going down"},
+  {src:"closet-install.jpg",cat:"progress",t:"Closet built-ins & hardwood install"},
+  {src:"living-lvp-2.jpg",cat:"floor",t:"Living room plank floor & wainscot"},
+  {src:"grey-install.jpg",cat:"progress",t:"Grey plank install, mid-project"},
+  {src:"rustic-bed.jpg",cat:"floor",t:"Rustic plank bedroom"},
+  {src:"structure-lift.jpg",cat:"progress",t:"Structural re-framing, raised house"},
+];
+const CATS=[["all","All"],["floor","Flooring"],["refin","Refinishing"],["trim","Trim & stairs"],["commercial","Commercial"],["progress","In progress"]];
+const gal=document.getElementById("gallery"),fl=document.getElementById("filters");
+const catName=Object.fromEntries(CATS);
+WORK.forEach((w,i)=>{
+  const b=document.createElement("button");b.type="button";b.className="shot";b.dataset.cat=w.cat;b.dataset.i=i;
+  b.innerHTML=`<img src="images/${w.src}" alt="${w.t}" loading="lazy"><span class="cap"><small>${catName[w.cat]}</small>${w.t}</span>`;
+  b.addEventListener("click",()=>openLb(i));gal.append(b);
+});
+fl.innerHTML=CATS.map(([k,n])=>`<button class="filter" type="button" data-k="${k}" aria-pressed="${k==="all"}">${n}</button>`).join("");
+fl.addEventListener("click",e=>{const f=e.target.closest(".filter");if(!f)return;
+  fl.querySelectorAll(".filter").forEach(x=>x.setAttribute("aria-pressed",x===f));
+  gal.querySelectorAll(".shot").forEach(s=>s.hidden=!(f.dataset.k==="all"||s.dataset.cat===f.dataset.k));});
+
+/* ----- lightbox ----- */
+const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg"),lbCap=document.getElementById("lbCap");let cur=0,ret=null;
+const visible=()=>[...gal.querySelectorAll(".shot:not([hidden])")].map(s=>+s.dataset.i);
+function show(i){cur=i;lbImg.src="images/"+WORK[i].src;lbImg.alt=WORK[i].t;lbCap.textContent=WORK[i].t}
+function openLb(i){ret=document.activeElement;show(i);lb.hidden=false;document.getElementById("lbX").focus()}
+function closeLb(){lb.hidden=true;ret&&ret.focus()}
+function step(d){const v=visible();const p=v.indexOf(cur);show(v[(p+d+v.length)%v.length])}
+document.getElementById("lbX").onclick=closeLb;document.getElementById("lbP").onclick=()=>step(-1);document.getElementById("lbN").onclick=()=>step(1);
+lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});
+document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")closeLb();if(e.key==="ArrowRight")step(1);if(e.key==="ArrowLeft")step(-1)});
+
+/* ----- flooring types ----- */
+const TYPES={
+  solid:{img:"red-oak-gloss.jpg",alt:"Refinished solid red oak floor",title:"Solid Hardwood",desc:"One piece of real wood, top to bottom. It lasts for generations and can be sanded and refinished many times. It moves with humidity, so it needs a wood subfloor.",
+    s:[["Refinish","Many times over its life"],["Moisture","Low tolerance. Keep out of baths and laundry"],["On a slab","Needs a plywood subfloor first"],["Thickness","¾″ typical"],["Best for","Living, dining, bedrooms and stairs"]]},
+  eng:{img:"herringbone.jpg",alt:"Herringbone engineered wood floor",title:"Engineered Hardwood",desc:"A real hardwood top layer over a cross-ply core. It looks the same as solid once it's down, holds its shape better in humidity and can go straight over concrete.",
+    s:[["Refinish","1–3 times, depending on wear layer"],["Moisture","Moderate. More stable than solid"],["On a slab","Yes, glued down or floated"],["Thickness","⅜″ – ¾″"],["Best for","Whole-home wood floors on Houston slabs"]]},
+  lvp:{img:"grey-lvp-stairs.jpg",alt:"Grey luxury vinyl plank in a living room",title:"LVP / LVT",desc:"Luxury vinyl plank and tile with a printed wood or stone look over a waterproof core. It handles spills, pets and wet rooms, and damaged planks can be swapped out one at a time.",
+    s:[["Refinish","No. Damaged planks are replaced"],["Moisture","Waterproof core"],["On a slab","Yes, floated over underlayment"],["Thickness","4 – 8 mm"],["Best for","Kitchens, baths, laundry and rentals"]]},
+  lam:{img:"rustic-bedroom.jpg",alt:"Rustic multi-tone laminate in a bedroom",title:"Laminate",desc:"A high-resolution photo layer under a tough wear surface on a fiberboard core. It resists scratches well and is the most budget-friendly wood look.",
+    s:[["Refinish","No"],["Moisture","Water-resistant surface. Varies by product"],["On a slab","Yes, with a vapor-barrier underlayment"],["Thickness","7 – 12 mm"],["Best for","Bedrooms, offices and living areas"]]}
+};
+Object.values(TYPES).forEach(t=>{const i=new Image();i.src="images/"+t.img});
+const tImg=document.getElementById("tImg");
+function setType(k){const t=TYPES[k];
+  document.querySelectorAll(".t-tab").forEach(b=>{const on=b.dataset.k===k;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1});
+  document.getElementById("tPanel").setAttribute("aria-labelledby","t-"+k);
+  tImg.style.opacity=0;setTimeout(()=>{tImg.src="images/"+t.img;tImg.alt=t.alt;tImg.style.opacity=1},160);
+  document.getElementById("tTitle").textContent=t.title;document.getElementById("tDesc").textContent=t.desc;
+  document.getElementById("tSpecs").innerHTML=t.s.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("");}
+const tabs=[...document.querySelectorAll(".t-tab")];
+tabs.forEach((b,i)=>{b.addEventListener("click",()=>setType(b.dataset.k));
+  b.addEventListener("keydown",e=>{const d=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;if(!d)return;e.preventDefault();const n=tabs[(i+d+tabs.length)%tabs.length];n.focus();setType(n.dataset.k)})});
+setType("solid");tImg.style.opacity=1;
+
+/* ----- before / after ----- */
+const ba=document.getElementById("ba"),baR=document.getElementById("baRange");
+baR.addEventListener("input",()=>ba.style.setProperty("--pos",baR.value+"%"));
+
+/* ----- hero video ----- */
+const vid=document.getElementById("heroVid"),vt=document.getElementById("vidToggle"),vi=document.getElementById("vidIcon");
+const PAUSE='<path d="M7 5h3v14H7zM14 5h3v14h-3z"/>',PLAY='<path d="M8 5l11 7-11 7z"/>';
+function setVid(play){if(play){vid.play().catch(()=>{});vi.innerHTML=PAUSE;vt.setAttribute("aria-label","Pause background video")}else{vid.pause();vi.innerHTML=PLAY;vt.setAttribute("aria-label","Play background video")}}
+vt.addEventListener("click",()=>setVid(vid.paused));
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)setVid(false);
+
+/* ----- nav ----- */
+const nav=document.getElementById("nav"),mb=document.getElementById("menu");
+mb.addEventListener("click",()=>{const o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o)});
+nav.addEventListener("click",e=>{if(e.target.closest("a")){nav.classList.remove("open");mb.setAttribute("aria-expanded","false")}});
+
+/* ----- copy ----- */
+function copyText(btn,text){const ok=()=>{const o=btn.textContent;btn.textContent="Copied";setTimeout(()=>btn.textContent=o,1500)};
+  const fb=()=>{const t=btn.parentElement.querySelector("dd,pre");if(!t)return;const r=document.createRange();r.selectNodeContents(t);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Selected"};
+  try{navigator.clipboard.writeText(text).then(ok,fb)}catch(e){fb()}}
+document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>copyText(b,b.dataset.copy)));
+
+/* ----- form ----- */
+const form=document.getElementById("form"),err=document.getElementById("fErr"),done=document.getElementById("fDone");
+form.addEventListener("submit",async e=>{e.preventDefault();err.hidden=true;
+  const d=Object.fromEntries(new FormData(form));const miss=[];
+  if(!d.name.trim())miss.push("your name");if(!d.phone.trim()&&!d.email.trim())miss.push("a phone number or email");
+  if(miss.length){err.textContent="Please add "+miss.join(" and ")+" so we can reach you.";err.hidden=false;return}
+  const body=`Name: ${d.name}\nPhone: ${d.phone}\nEmail: ${d.email}\nZIP: ${d.zip}\nProject: ${d.service}\n\n${d.message}`;
+  if(FORM_ENDPOINT){try{const r=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Accept":"application/json","Content-Type":"application/json"},body:JSON.stringify(d)});
+    if(r.ok){form.hidden=true;done.hidden=false;done.innerHTML=`<b>Thanks, ${d.name.split(" ")[0]}. Your request is in.</b><span>We'll call or email within one business day.</span>`;return}}catch(_){}}
+  done.hidden=false;
+  done.innerHTML=`<b>Your request is ready to send.</b><span>Email it to <strong>${CONTACT_EMAIL}</strong> or call <strong>(713) 555-0142</strong>.</span><pre></pre><div class="row"><a class="btn btn-gold" href="mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Estimate request: "+d.service)}&body=${encodeURIComponent(body)}">Open in email</a><button class="btn btn-line" type="button">Copy request</button></div>`;
+  done.querySelector("pre").textContent=body;done.querySelector(".row button").addEventListener("click",ev=>copyText(ev.currentTarget,body));});
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+
+</body></html>
